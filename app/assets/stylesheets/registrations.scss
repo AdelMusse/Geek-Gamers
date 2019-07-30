@@ -1,0 +1,30 @@
+// Place all the styles related to the Registrations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.form-container {
+    width: 40%;
+    border: 0.5px solid $black;
+    border-radius: 10px;
+    background-color: $white;
+}
+
+.form-wrapper {
+    min-height: 800px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.btn-registration {
+    border: 1px solid $black;
+    display: grid;
+    margin: 0 auto;
+    width: 50%;
+    background-color: $black;
+    color: $white;
+}
+
+.btn-registration:hover {
+    background-color: lightblue;
+    color: black;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }

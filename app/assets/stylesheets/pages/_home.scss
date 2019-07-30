@@ -1,0 +1,24 @@
+// Specific CSS for your home-page
+
+html,
+body {
+  height: 100%;
+}
+
+#main {
+    min-height:94.3%;
+    background-color: $dark-red;
+    padding-bottom: 50px;
+}
+
+// Footer
+#sticky-footer {
+    display: flex;
+    flex-shrink: none;
+    height: 70px;
+    margin-top: -70px;
+  }
+
+#sticky-footer > .container {
+    color: $black;
+}

@@ -1,0 +1,40 @@
+// Place all the styles related to the UsersHome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#navb > :first-child {
+    margin: 0 auto;
+}
+
+.left-side {
+    grid-area: left;
+}
+
+.right-side {
+    grid-area: right;
+}
+.radius {
+    border: 1px solid $white;
+    border-radius: 20px
+}
+
+.jumbotron-fluid{
+    border-radius: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.middle-container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-column-gap: 10px;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "left left right right"
+}
+
+.grid-container{
+    display: grid;
+    align-content: center;
+}
