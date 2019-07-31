@@ -6,7 +6,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div id="navb" class="navbar-collapse collapse hide">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav games">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Popular Games</a>
                 </li>
@@ -20,7 +20,10 @@
 
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./home_page"><span class="fas fa-sign-in-alt"></span> Logout</a>
+                <%= link_to destroy_user_session_path, method: :delete, class:"nav-link" do%>
+                    <span class="fas fa-sign-out-alt"></span> Logout
+                    <% end%>
+                    <%# <a class="nav-link" href="./home_page"><span class="fas fa-sign-out-alt"></span> Logout</a> %>
                 </li>
             </ul>
         </div>
