@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # get 'index' to: 'games#index'
+  resources :games
   root to: "home#home_page"
   # devise_for :users
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

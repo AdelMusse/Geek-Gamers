@@ -256,13 +256,13 @@ Devise.setup do |config|
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
   # config.sign_out_via = :get
-  # ==> OmniAuth
+  # ==> OmniAuthx
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :facebook, "465361634246083", "bb738ad2a3a5351588fe474565e2c8c1", callback_url: "http://localhost:3000/users/auth/facebook/callback"
-  config.omniauth :google_oauth2, '775402584171-qhbs0nmmtbtdbh81rq24a8hsilmirss6.apps.googleusercontent.com', 'vrXa59ADogn5Xc9yWcPVsiph', callback_url: "http://localhost:3000/auth/google_oauth2/callback"
-
+  config.omniauth :facebook, Rails.application.credentials.facebook_id,Rails.application.credentials.facebook_secret,callback_url: Rails.application.credentials.hostname + "/users/auth/facebook/callback"
+  config.omniauth :google_oauth2, Rails.application.credentials.google_id,Rails.application.credentials.google_secret,callback_url:
+  Rails.application.credentials.hostname + "/users/auth/google_oauth2/callback"
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
