@@ -14,17 +14,16 @@ class GamesController < ApplicationController
   end
 
   def create
-    byebug
     @game = Game.create(game_params) 
-    @game.use_id =session[:id]
+    @game.user_id =session[:id]
       @game.save 
-        redirect_to users_home_path
+        redirect_to user_posts_path
   end
 
   private
 
  def game_params
-  params.require(:game).permit(:game_name,:image, :description,:price) 
+  params.require(:game).permit(:game_name,:picture, :description,:price) 
 end
 ​
 end
