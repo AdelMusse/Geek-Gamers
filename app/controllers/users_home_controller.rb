@@ -3,6 +3,7 @@ class UsersHomeController < ApplicationController
     @games = Game.all
   end
   def user_posts
-    @games = Game.all
+    user=User.find(session[:id])
+    @games=user.games
   end
 end
