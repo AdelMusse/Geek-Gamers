@@ -16,6 +16,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">New Released Games</a>
                 </li>
+                <li class="nav-item">
+                    <%= link_to "Posts",games_path %>
+                </li>
+                <li class="nav-item">
+                    <%=link_to "create a post", new_game_path%>
+                </li>
             </ul>
 
             <ul class="nav navbar-nav ml-auto">
@@ -24,9 +30,6 @@
                     <span class="fas fa-sign-out-alt"></span> Logout
                     <% end%>
                     <%# <a class="nav-link" href="./home_page"><span class="fas fa-sign-out-alt"></span> Logout</a> %>
-                </li>
-                <li class="nav-item">
-                    <%=link_to "Post a Games", new_game_path%>
                 </li>
                 <%# <h3>welcome<%user.name%><%#</h3>%>
             </ul>

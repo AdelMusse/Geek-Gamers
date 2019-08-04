@@ -2,7 +2,7 @@ class GamesController < ApplicationController
   before_action :current_game, only: [:show, :edit, :update, :destroy]
   
   def index
-    @game = Game.all
+    @games = Game.all
   end
 
   def show
@@ -18,9 +18,11 @@ class GamesController < ApplicationController
   end
 
   def update
-    @game.update(game_params)
-
-    redirect_to game_path(@game)
+    if @game.update(game_params)
+      redirect_to games_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -30,20 +32,25 @@ class GamesController < ApplicationController
   end
 
   def create
-    buybug
     @game = Game.create(game_params) 
     @game.user_id =session[:id]
-    @game.save
-    redirect_to games_path(@game)
+    if@game.save
+      redirect_to games_path
+    else
+      render :new
+    end
   end
 
-  def current_game
-    @game = Game.find(params[:id])
-  end
+
 
   private
 
  def game_params
   params.require(:game).permit(:game_name,:picture, :description,:price)
   end
+
+  def current_game
+    @game = Game.find(params[:id])
+  end
+  
 end
