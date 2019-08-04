@@ -1,0 +1,11 @@
+<main id="main" role="main">
+    <div class="container-card">
+        <%= bootstrap_form_for(@game, url:game_path) do |f| %>
+        <%= f.text_field :game_name %>
+        <%= f.text_field :description %>
+        <%= f.text_field :price %>
+        <%= f.file_field :picture %>
+        <%= f.submit "Submit" %>
+        <% end %>
+    </div>
+</main>

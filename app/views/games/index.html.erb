@@ -1,2 +1,20 @@
-<h1>Games#index</h1>
-<p>Find me in app/views/games/index.html.erb</p>
+<main id="main" role="main">
+    <div class="container-card">
+        <%@game.each do |game|%>
+        <%# <%byebug %>
+        <div class="card" style="width: 18rem;">
+            <%# <% if game.picture.attached?%> 
+            <%= image_tag(url_for(game.picture), :alt => "game image")%>
+            <%# <%end%> 
+            <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
+            <div class="card-body">
+                <h5 class="card-title"><%=game.game_name%></h5>
+                <p class="card-text"><%=game.description%></p>
+                <p class="card-text"><%=game.price%></p>
+            </div>
+            <%= button_to 'Edit', edit_game_path(game), method: 'get'%>
+            <%= button_to 'Remove', game_path(game), method: 'delete', data: { confirm: 'Are you sure?' } %>
+        </div>
+        <%end%>
+    </div>
+    <main>
