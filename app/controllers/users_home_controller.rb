@@ -3,6 +3,11 @@ class UsersHomeController < ApplicationController
     @games = Game.all
   end
 
+  def user_games
+    user = User.find(session[:id])
+    @games = user.games 
+  end
+
   def user_posts
     user=User.find(session[:id])
     @games=user.games
