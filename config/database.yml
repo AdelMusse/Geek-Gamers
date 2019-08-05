@@ -81,5 +81,4 @@ test:
 production:
   <<: *default
   database: geek_gamers_production
-  username: geek_gamers
-  password: <%= ENV['GEEK_GAMERS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
