@@ -25,6 +25,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "bootstrap_form", ">= 4.2.0"
+gem "aws-sdk-s3", require:false
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
