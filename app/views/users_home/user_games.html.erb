@@ -17,13 +17,14 @@
       	</div><!-- /.nav-collapse -->
   </nav>
 </div>
+<%unless @games.empty?%>
 <main id="main" role="main">
 <div class= "container-card">
-    <%@game.each do |game|%>
+    <%@games.each do |game|%>
         <div class="card" style="width: 18rem;">
-            <%# <% if game.picture.attached?%> 
+            <% if game.picture.attached?%>
             <%= image_tag(url_for(game.picture), :alt => "game image")%>
-            <%# <%end%>
+            <%end%>
             <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
             <div class="card-body">
                 <h5 class="card-title"><%=game.game_name%></h5>
@@ -36,3 +37,4 @@
     <%end%>
     </div>
 <main>
+<%end%>
