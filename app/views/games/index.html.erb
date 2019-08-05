@@ -1,19 +1,16 @@
-<main id="main" role="main">
-    <%= link_to "Create", new_game_path, class: "btn btn-dark"%>
-    <div class="container-card">
-        <%@games.each do |game|%>
-        <%# <%byebug %>
-        <div class="card" style="width: 18rem;">
-            <%# <% if game.picture.attached?%> 
-            <%= image_tag(url_for(game.picture), :alt => "game image")%>
-            <%# <%end%> 
-            <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
-            <div class="card-body">
-                <h5 class="card-title"><%=game.game_name%></h5>
-                <p class="card-text"><%=game.description%></p>
-                <p class="card-text"><%=game.price%></p>
-            </div>
+<%= link_to "Create", new_game_path, class: "btn btn-dark"%>
+<div class="container-card">
+    <%@games.each do |game|%>
+    <%# <%byebug %>
+    <div class="card" style="width: 18rem;">
+        <%# <% if game.picture.attached?%>
+        <%= image_tag(url_for(game.picture), :alt => "game image")%>
+        <%# <%end%>
+        <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
+        <div class="card-body">
+            <h5 class="card-title"><%=game.game_name%></h5>
+            <p class="card-text"><%=game.description%></p>
+            <p class="card-text"><%=game.price%></p>
         </div>
-        <%end%>
     </div>
-    <main>
+    <%end%>

@@ -1,11 +1,15 @@
 <main id="main" role="main">
-    <div class="container-card">
-        <%= bootstrap_form_for(@game) do |f| %>
-        <%= f.text_field :game_name %>
-        <%= f.text_field :description %>
-        <%= f.text_field :price %>
-        <%= f.file_field :picture %>
-        <%= f.submit "Submit" %>
-        <% end %>
-    </div>
+    <section id="cover" class="text-center p-5">
+        <div class="middle-container">
+            <div class="container-card">
+                <%= bootstrap_form_for(@game) do |f| %>
+                <%= f.text_field :game_name %>
+                <%= f.text_field :description %>
+                <%= f.text_field :price %>
+                <%= f.file_field :picture %>
+                <%= f.submit "Submit" %>
+                <% end %>
+            </div>
+        </div>
+    </section>
 </main>

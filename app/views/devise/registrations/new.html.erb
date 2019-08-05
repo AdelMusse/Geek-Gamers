@@ -1,48 +1,62 @@
-<main id="main" role="main">
-  <div class="form-wrapper">
-    <div class="form-container">
-      <h1 class="text-center"> SignUp here </h1>
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), class: "p-4") do |f| %>
-      <%# <form class="p-4"> %>
-      <%= f.error_notification %>
-      <div class="form-group">
-        <label for="name">Full name</label>
-        <input type="text" class="form-control" id="name" placeholder="Full name">
-      </div>
-      <div class="form-group form-inputs">
-        <label for="exampleDropdownFormEmail2">Email address</label>
-        <%= f.input :email,
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center text-white mb-4">Rigister With Geek Gamers </h2>
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+
+          <!-- form card login -->
+          <div class="card rounded-0">
+            <div class="card-header">
+              <h3 class="mb-0">Sign Up</h3>
+            </div>
+            <div class="card-body">
+              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), class: "p-4") do |f| %>
+
+              <%= f.error_notification %>
+              <div class="form-group">
+                <label for="name">Full name</label>
+                <input type="text" class="form-control form-control-lg rounded-0" id="name" placeholder="Full name">
+              </div>
+              <div class="form-group">
+                <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email", class: "form-control" }%>
-      </div>
-      <div class="form-group form-inputs">
-        <label for="exampleDropdownFormPassword2">Password</label>
-        <%= f.input :password,
+                input_html: { autocomplete: "email", class: "form-control" }, class:"form-control form-control-lg rounded-0"%>
+              </div>
+              <div class="form-group">
+                <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password", class: "form-control" } %>
-        <%# <input type="password" class="form-control" id="password" placeholder="Password"> %>
-        <%= f.input :password_confirmation,
+                input_html: { autocomplete: "new-password", class: "form-control" }, class:"form-control form-control-lg rounded-0"  %>
+              </div>
+              <div class="form-group">
+                <%= f.input :password_confirmation,
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
-      </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
-      </div>
-      <%# <div class="form-actions">
-        <%= link_to "<button class=\"btn btn-primary\">Sign in with Facebook</button>", user_facebook_omniauth_authorize_path %>
-      <%# </div>%>
-      <% end %>
+                input_html: { autocomplete: "new-password" }, class:"form-control form-control-lg rounded-0" %>
+              </div>
+              <%= f.button :submit, "Sign Up",class: "btn btn-success btn-lg float-right" %>
+              </form>
+            </div>
+            <!--/card-block-->
+            <div class="card-footer">
+              <div class="d-flex justify-content-center links">
+                <%= render "devise/shared/links" %>
+              </div>
+            </div>
+          </div>
+          <!-- /form card login -->
 
-      <%= render "devise/shared/links" %>
-      </form>
+        </div>
+
+
+      </div>
+      <!--/row-->
+
     </div>
+    <!--/col-->
   </div>
-</main>
-
-<footer id="sticky-footer" class="py-4 bg-light text-white-50">
-  <div class="container text-center">
-    <small>Copyright &copy; Geek Gamers</small>
-  </div>
-</footer>
+  <!--/row-->
+</div>
+<!--/container-->
+<% end %>

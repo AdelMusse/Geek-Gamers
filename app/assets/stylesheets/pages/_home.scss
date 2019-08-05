@@ -22,3 +22,8 @@ body {
 #sticky-footer > .container {
     color: $black;
 }
+ //__________________________navbar______________________
+ .dropdown:hover>.dropdown-menu {
+  display: block;
+}
+  

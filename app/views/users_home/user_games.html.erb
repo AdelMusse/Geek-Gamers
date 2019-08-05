@@ -1,22 +1,19 @@
-
 <%unless @games.empty?%>
-<main id="main" role="main">
-<div class= "container-card">
+<div class="container-card">
     <%@games.each do |game|%>
-        <div class="card" style="width: 18rem;">
-            <% if game.picture.attached?%>
-            <%= image_tag(url_for(game.picture), :alt => "game image")%>
-            <%end%>
-            <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
-            <div class="card-body">
-                <h5 class="card-title"><%=game.game_name%></h5>
-                <p class="card-text"><%=game.description%></p>
-                <p class="card-text"><%=game.price%></p>
-            </div>
+    <div class="card" style="width: 18rem;">
+        <% if game.picture.attached?%>
+        <%= image_tag(url_for(game.picture), :alt => "game image")%>
+        <%end%>
+        <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
+        <div class="card-body">
+            <h5 class="card-title"><%=game.game_name%></h5>
+            <p class="card-text"><%=game.description%></p>
+            <p class="card-text"><%=game.price%></p>
         </div>
-          <%= link_to 'Edit', edit_game_path(game), class: "btn btn-primary"%>
-          <%= link_to 'Remove', game_path(game), method: 'delete',class: "btn btn-danger" ,data: { confirm: 'Are you sure?' } %>
-    <%end%>
     </div>
-<main>
+    <%= link_to 'Edit', edit_game_path(game), class: "btn btn-primary"%>
+    <%= link_to 'Remove', game_path(game), method: 'delete',class: "btn btn-danger" ,data: { confirm: 'Are you sure?' } %>
+    <%end%>
+</div>
 <%end%>
