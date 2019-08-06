@@ -12,8 +12,8 @@
 </head>
 
 <body>
-
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <main id="main" role="main">
+    <!--<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
         
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown">
@@ -72,8 +72,82 @@
         </div>
         <%end%>
         </div>
-    </nav>
-    <main id="main" role="main">
+    </nav>-->
+
+
+
+        <!--_____________________________testing____________________________-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Geek Gamers</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <%if user_signed_in?%>
+      <li class="nav-item">
+        <%=link_to "create a post", new_game_path, class: "nav-link"%>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%=link_to "Popular Games",games_path, class:"dropdown-item"%>
+          <%=link_to "Upcoming Games",games_path, class:"dropdown-item"%>
+          <%=link_to "New Released Games",games_path, class:"dropdown-item"%>
+          <div class="dropdown-divider"></div>
+          <%=link_to "Game Posts",games_path, class:"dropdown-item"%>
+          <%=link_to "My posts",user_games_path, class:"dropdown-item"%>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+                <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <%= link_to destroy_user_session_path, method: :delete, class:"nav-link" do%>
+                    <span class="fas fa-sign-out-alt"></span> Logout
+                    <% end%>
+                </li>
+            </ul>
+    <%else%>
+    <ul class="nav navbar-nav ml-auto sign">
+                <li class="nav-item">
+                    <%=link_to new_user_registration_path, class:"nav-link" do%>
+                    <span class="fas fa-user"></span> Sign Up
+                    <% end%>
+                </li>
+                <li class="nav-item">
+                    <%=link_to new_user_session_path, class:"nav-link" do%>
+                    <span class="fas fa-sign-in-alt"></span> Sign in
+                    <% end%>
+                </li>
+    </ul>
+    <%end%>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <section id="cover" class="text-center p-5">
                 <%= yield %>
             </div>
