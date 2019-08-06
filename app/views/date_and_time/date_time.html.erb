@@ -16,20 +16,3 @@
 </div>
 </div>
 </main>
-
-
-<div class="form_main">
-
-    <div class="form">
-        <div id="contactFrm" name="contactFrm" ,>
-            <%= form_for( @game, url: games_path, method: :get) do |form|%>
-            <%= form.label :pickup_date, "PICK-UP DATE:",class: "txt" %>
-            <%=form.date_field :pickup_date,class: "form-control ",:required => true %>
-            <%= form.label :pickup_date, "RETURN DATE:",class: "txt" %>
-            <%=form.date_field :return_date,class: "form-control ",:required => true %>
-            <br>
-            <%=form.submit "RENT NOW" ,class: "btn btn-primary black-background white btn-block text-uppercase"%>
-            <%end%>
-        </div>
-    </div>
-</div>
