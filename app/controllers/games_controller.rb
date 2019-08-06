@@ -2,9 +2,9 @@ class GamesController < ApplicationController
   before_action :current_game, only: [:show, :edit, :update, :destroy]
   
   def index
-    unless params[:game].nil?
-      @Games=Game.where('pickup_date > ? OR  return_date < ? OR reserved = ?', params[:game][:return_date],params[:game][:pickup_date],"false")
-  else
+  #   unless params[:game].nil?
+  #     @Games=Game.where('pickup_date > ? OR  return_date < ? OR reserved = ?', params[:game][:return_date],params[:game][:pickup_date],"false")
+  # else
     @games=Game.all.order("created_at DESC")
   end
 
