@@ -66,7 +66,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
     api_key: Rails.application.credentials.railsgun_api,
-    domain: 'adilmusse.site'
+    domain: 'sandboxeb9fcee6447b4277add8c2937e629b5e.mailgun.org'
   }
   # config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
