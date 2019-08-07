@@ -66,13 +66,13 @@ Rails.application.configure do
   # config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
     api_key: Rails.application.credentials.railsgun_api,
-    domain: 'adilmusse.site'
+    domain: 'www.adilmusse.site'
   }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'adilmusse.site',
+    domain:               'www.adilmusse.site',
     user_name:            Rails.application.credentials.user_name,
     password:             Rails.application.credentials.password,
     authentication:       'plain',
