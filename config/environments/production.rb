@@ -78,7 +78,8 @@ Rails.application.configure do
 #     authentication:       'plain',
 #     enable_starttls_auto: true
 # }
- 
+#Sideqik
+  config.active_job.queue_adapter = :sidekiq
 
 
   # Ignore bad email addresses and do not raise email delivery errors.
