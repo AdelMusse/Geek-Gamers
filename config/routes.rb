@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get 'date_time', to: 'date_and_time#date_time'
   get 'signin', to: "registrations#signin"
   get 'signup', to: "registrations#signup"
+  get '_forms', to: "forms#_forms"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
