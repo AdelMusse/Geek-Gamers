@@ -40,7 +40,7 @@ gem 'simple_form'
 gem 'mailgun-ruby', '~>1.1.6'
 gem 'premailer-rails'
 gem 'sidekiq'
-gem 'devise-async'
+# gem 'devise-async'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
