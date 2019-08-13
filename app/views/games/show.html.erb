@@ -5,7 +5,7 @@
         <%# <%@games.each do |game|%>
         <%# <%byebug %>
         <div class="card" style="width: 18rem;">
-            <% if game.picture.attached?
+            <% if @game.picture.attached?%>
             <%= image_tag(url_for(@game.picture), :alt => "game image")%>
             <%end%>
             <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
@@ -14,7 +14,12 @@
                 <p class="card-text"><%=@game.description%></p>
                 <p class="card-text"><%=@game.price%></p>
             </div>
+        <%= form_for(@game, url: charges_new_path, method: :get) do |f|%>
+        <%= f.hidden_field :game_id, :value => @game.id %>
+        <%= f.submit "Buy Now", class:"btn btn-primary"%>
+        <%end%>
         </div>
+
         <%# <%end%>
     </div>
     </div>
