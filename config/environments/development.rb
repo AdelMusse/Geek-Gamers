@@ -65,4 +65,8 @@ Rails.application.configure do
   config.active_storage.service = :local
   #Sideqik
   config.active_job.queue_adapter = :sidekiq
+
+  # config.stripe.secret_key = Rails.application.credentials.secret_key
+  # config.stripe.publishable_key = Rails.application.credentials.publishable_key
+  
 end

@@ -41,6 +41,11 @@ gem 'mailgun-ruby', '~>1.1.6'
 gem 'premailer-rails'
 gem 'sidekiq'
 gem 'searchkick'
+gem 'stripe'
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-passenger'
+gem 'capistrano-rbenv'
 # gem 'devise-async'
 
 group :development, :test do

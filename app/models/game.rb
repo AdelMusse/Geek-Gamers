@@ -6,7 +6,6 @@ class Game < ApplicationRecord
         {
           game_name: game_name,
           description: description,
-          price: price
         }
       end
 end

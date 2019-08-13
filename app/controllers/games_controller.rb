@@ -42,6 +42,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.create(game_params) 
     @game.user_id =session[:id]
+    @game.reindex
     if@game.save
       redirect_to games_path
     else
@@ -67,4 +68,21 @@ class GamesController < ApplicationController
      redirect_to games_path
     end
   end
+
+  stripe.api_key = Rails.application.credentials.secret_key
+
+session = stripe.checkout.Session.create(
+  payment_method_types=['card'],
+  line_items=[{
+    'name': :game_name,
+    'description': :description,
+    'amount': :price,
+    'currency': 'myr',
+    'quantity': 1,
+  }],
+  success_url='https://example.com/success',
+  cancel_url='https://example.com/cancel',
+)
+
+
 end

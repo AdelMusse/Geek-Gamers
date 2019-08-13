@@ -12,5 +12,9 @@
             <p class="card-text"><%=game.description%></p>
             <p class="card-text"><%=game.price%></p>
         </div>
+        <%= form_for(game, url: charges_new_path, method: :get) do |f|%>
+        <%= f.hidden_field :game_id, :value => game.id %>
+        <%= f.submit "Buy Now", class:"btn btn-primary"%>
+        <%end%>
     </div>
     <%end%>

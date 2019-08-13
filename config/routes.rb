@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'payments/success'
+  get 'payments/cancel'
+  get 'charges/new'
+  get 'charges/create'
+  resources :charges, only: [:new, :create]
+  resources :payments
   devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sessions' ,omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :games
   root to: "home#home_page"
