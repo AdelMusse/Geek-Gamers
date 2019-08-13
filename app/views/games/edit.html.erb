@@ -7,6 +7,7 @@
                 <%= f.text_field :description %>
                 <%= f.text_field :price %>
                 <%= f.file_field :picture %>
+                <%= f.hidden_field :user_id , :value => current_user.id %>
                 <%= f.submit "Submit" %>
                 <% end %>
             </div>

@@ -1,11 +1,16 @@
 class GamesController < ApplicationController
   before_action :current_game, only: [:show, :edit, :update, :destroy]
-  
+  before_action :resource_owner, only: [:edit, :update, :destroy]
   def index
   #   unless params[:game].nil?
   #     @Games=Game.where('pickup_date > ? OR  return_date < ? OR reserved = ?', params[:game][:return_date],params[:game][:pickup_date],"false")
   # else
-    @games=Game.all.order("created_at DESC")
+  search = params[:term].present? ? params[:term] :nil
+  @games = if search
+      Game.search(search)
+    else
+      @games=Game.all.order("created_at DESC")
+    end
   end
 
   def show
@@ -55,5 +60,11 @@ class GamesController < ApplicationController
   def current_game
     @game = Game.find(params[:id])
   end
-  
+
+  def resource_owner
+    unless @game.user_id == current_user.id
+     flash[:notice] = 'Access denied as you are not owner of this Job'
+     redirect_to games_path
+    end
+  end
 end

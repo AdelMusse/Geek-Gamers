@@ -40,6 +40,7 @@ gem 'simple_form'
 gem 'mailgun-ruby', '~>1.1.6'
 gem 'premailer-rails'
 gem 'sidekiq'
+gem 'searchkick'
 # gem 'devise-async'
 
 group :development, :test do
