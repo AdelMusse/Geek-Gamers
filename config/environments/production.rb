@@ -59,16 +59,16 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "geek_gamers_production"
-  config.action_mailer.default_url_options = { :host => 'www.adilmusse.site' }
+  config.action_mailer.default_url_options = { :host => 'https://adilmusse.site' }
   config.action_mailer.perform_caching = false
 
   config.action_mailer.raise_delivery_errors = true
-  # config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
     api_key: Rails.application.credentials.railsgun_api,
-    domain: 'adilmusse.site'
+    domain: 'https://adilmusse.site'
   }
-  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
