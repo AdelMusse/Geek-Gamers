@@ -47,6 +47,7 @@ gem 'capistrano-rails'
 gem 'capistrano-passenger'
 gem 'capistrano-rbenv'
 gem 'honeybadger', '~> 4.0'
+gem 'capistrano-sidekiq'
 # gem 'devise-async'
 
 group :development, :test do
