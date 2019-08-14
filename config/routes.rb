@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'payments/cancel'
   get 'charges/new'
   get 'charges/create'
+  post '/comment', to: 'comments#new_comment'
   resources :charges, only: [:new, :create]
   resources :payments
   devise_for :users, controllers: {registrations: 'users/registrations', sessions: 'users/sessions' ,omniauth_callbacks: 'users/omniauth_callbacks' }
