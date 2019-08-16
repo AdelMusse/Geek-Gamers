@@ -42,7 +42,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.create(game_params) 
     @game.user_id =session[:id]
-    @game.reindex
+    # @game.reindex
     if@game.save
       redirect_to games_path
     else
