@@ -35,8 +35,8 @@ class GamesController < ApplicationController
 
   def destroy
     @game.destroy
-
-    redirect_to games_path
+    
+    redirect_to user_games_path
   end
 
   def create
