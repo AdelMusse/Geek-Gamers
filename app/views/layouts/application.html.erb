@@ -86,11 +86,17 @@
 
 
 
-
-
+    <%# <% if 'error_notification'%> 
+        <div class= "text-center alert-success">
+        <%= notice %>
+        </div>
+        <div class= "text-center alert-warning">
+            <%= alert %>
+        </div>
+    <%# <%end%> 
         <section id="cover" class="text-center p-5">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+
+        <%# <%= render 'layouts/messages'%> 
                 <%= yield %>
             </div>
         </section>
