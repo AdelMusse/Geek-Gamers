@@ -7,15 +7,15 @@
     <%end%>
     <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
     <div class="card-body">
-      <h5 class="card-title"><%=game.game_name%></h5>
-      <p class="card-text"><%=game.description%></p>
-      <p class="card-text"><%=game.price%></p>
+      <h5 class="card-title"><strong>Game Name:</strong> <%=game.game_name%></h5><hr>
+      <p class="card-text"><strong>Description:</strong> <%=game.description%></p><hr>
+      <p class="card-text"><strong>Price: RM</strong> <%=game.price%></p><hr>
     </div>
+    <% if user_signed_in? && current_user.id == game.user_id %>
+      <%= link_to 'Edit', edit_game_path(game), class: "btn btn-primary"%>
+      <%= link_to 'Remove', game_path(game), method: 'delete',class: "btn btn-danger" ,data: { confirm: 'Are you sure?' } %>
+    <%end%>
   </div>
-  <% if user_signed_in? && current_user.id == game.user_id %> 
-  <%= link_to 'Edit', edit_game_path(game), class: "btn btn-primary"%>
-  <%= link_to 'Remove', game_path(game), method: 'delete',class: "btn btn-danger" ,data: { confirm: 'Are you sure?' } %>
-  <%end%>
   <%end%>
 </div>
 <%end%>
@@ -148,7 +148,7 @@
     <span id="place-address"></span>
   </div> %>
 
-  <%# <script>
+<%# <script>
     // This example requires the Places library. Include the libraries=places
     // parameter when you first load the API. For example:
     // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
@@ -253,7 +253,7 @@
 //         });
 //     }
  </script> %>
-   <%# <script>
+<%# <script>
      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLwih_dEjx7rHvO04och6w_zABvfO8Dcw&libraries=places&callback=initMap"
      async defer>
  </script> %>

@@ -3,14 +3,16 @@
     <%@games.each do |game|%>
     <%# <%byebug %>
     <div class="card" style="width: 18rem;">
+    <div class="card-image">
         <%# <% if game.picture.attached?%>
         <%= image_tag(url_for(game.picture), :alt => "game image")%>
         <%# <%end%>
         <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
+    </div>
         <div class="card-body">
-            <h5 class="card-title"><%=game.game_name%></h5>
-            <p class="card-text"><%=game.description%></p>
-            <p class="card-text"><%=game.price%></p>
+            <h5 class="card-title"><strong>Game Name:</strong> <%=game.game_name%></h5><hr>
+            <p class="card-text"><strong>Description:</strong> <%=game.description%></p><hr>
+            <p class="card-text"><strong>Price: RM</strong> <%=game.price%></p><hr>
         </div>
         <%#<%= form_for(game, url: charges_new_path, method: :get) do |f|%>
         <%#<%= f.hidden_field :game_id, :value => game.id %>
