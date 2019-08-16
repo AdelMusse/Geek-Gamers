@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+  
   get 'payments/success'
   get 'payments/cancel'
   get 'charges/new'
