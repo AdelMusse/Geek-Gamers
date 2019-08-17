@@ -10,11 +10,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super do |user|
-  #     UserMailer.welcome_email(user).deliver_later
-  #     WelcomeJob.set(wait: 10.seconds).perform_later(user)
-  #   end
+  def create
+    super do |user|
+      UserMailer.welcome_email(user).deliver_later
+      WelcomeJob.set(wait: 10.seconds).perform_later(user)
+    end
   # end
 
   # GET /resource/edit
