@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     def new_comment
         request.body.rewind
         @result = JSON.parse(request.body.read)
-        byebug
+        # byebug
         @comment = Comment.create(user_id: current_user.id, game_id: @result["game_id"], comment: @result["comment_text"])
         # {:game_id => @comment.game_id, :comment_text => @comment.comment_text}.to_json
         respond_to do |format|

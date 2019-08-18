@@ -43,7 +43,7 @@
                                     <div class="form-group">
                                         <input type="hidden" id="game_id" value="<%=@game.id%>">
                                         <!---------------------------------------------------------->
-
+<%# 
 
                                         <div class="container">
                                             <div id="ratinggroup"
@@ -59,7 +59,7 @@
                                                 <input type="radio" id="star1" name="rating" value="1" /><label
                                                     for="star1" title="1 star">1</label>
                                             </div>
-                                        </div>
+                                        </div> %>
                                         <!---------------------------------------------------------->
 
 
@@ -89,20 +89,10 @@
 
        function newComment(event) {
     event.preventDefault();
-// var radios = document.getElementsByName('rating');
-// for (var i = 0, length = radios.length; i < length; i++)
-// {   
-//  if (radios[i].checked)
-//  {
-//  radioValue=radios[i].value;
-//   // only one radio can be logically checked, don't check the rest
-//   break;
-//  }
-// }
+
     var userComment = {
         camment: `${commentText.value}`,
         game_id: `${gameId.value}`,
-        //  radio_value: `${radioValue}`
       };
      
  
