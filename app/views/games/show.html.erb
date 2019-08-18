@@ -1,7 +1,6 @@
 <body>
-<main id="main" role="main">
-    <section id="cover" class="text-center p-5">
-        <div class="middle-container">
+    <main id="main" role="main">
+        <section id="cover" class="text-center p-5">
             <div class="container-card">
                 <%# <%@games.each do |game|%>
                 <%# <%byebug %>
@@ -10,21 +9,24 @@
                     <%= image_tag(url_for(@game.picture), :alt => "game image")%>
                     <%end%>
                     <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
-        <div class="card-body">
-            <h5 class="card-title"><strong>Game Name:</strong> <%=@game.game_name%></h5><hr>
-            <p class="card-text"><strong>Description:</strong> <%=@game.description%></p><hr>
-            <p class="card-text"><strong>Price: RM</strong> <%=@game.price%></p><hr>
-        </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Game Name:</strong> <%=@game.game_name%></h5>
+                        <hr>
+                        <p class="card-text"><strong>Description:</strong> <%=@game.description%></p>
+                        <hr>
+                        <p class="card-text"><strong>Price: RM</strong> <%=@game.price%></p>
+                        <hr>
+                    </div>
                     <%= form_for(@game, url: charges_new_path, method: :get) do |f|%>
                     <%= f.hidden_field :game_id, :value => @game.id %>
                     <%= f.submit "Buy Now", class:"btn btn-primary"%>
                     <%end%>
                     <!-- Button trigger comment modal -->
                     <%# <%= button_to "comment",id: "comment-btn", class:"btn btn-primary"%>
-                    <button  class="card-detail-badge" data-toggle="modal" data-target="#comment">
-                        
-                      Comment
-                       
+                    <button class="card-detail-badge" data-toggle="modal" data-target="#comment">
+
+                        Comment
+
                     </button>
 
 
@@ -35,15 +37,15 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLongTitle">Comment on <%=@game.game_name%>
-                                    <button class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+                                        <button class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                 </div>
                                 <form id="commentform" method="POST" class="modal-body">
                                     <div class="form-group">
                                         <input type="hidden" id="game_id" value="<%=@game.id%>">
                                         <!---------------------------------------------------------->
-<%# 
+                                        <%# 
 
                                         <div class="container">
                                             <div id="ratinggroup"
@@ -69,42 +71,44 @@
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button type="submit" id= "submit" class="btn btn-primary"
-                                            data-dismiss = "modal"> Sumbit</button>
+                                        <button type="submit" id="submit" class="btn btn-primary" data-dismiss="modal">
+                                            Sumbit</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                    </div>
 
-    </section>
-    <main>
+        </section>
+        <main>
 
-    <script>
-        var submitButton = document.getElementById("submit");
-        var gameId = document.getElementById("game_id");
-        var commentText = document.getElementById("comment_text");
+            <script>
+                var submitButton = document.getElementById("submit");
+                var gameId = document.getElementById("game_id");
+                var commentText = document.getElementById("comment_text");
 
-        submitButton = document.addEventListener("click", newComment);
+                submitButton = document.addEventListener("click", newComment);
 
-       function newComment(event) {
-    event.preventDefault();
+                function newComment(event) {
+                    event.preventDefault();
 
-    var userComment = {
-        camment: `${commentText.value}`,
-        game_id: `${gameId.value}`,
-      };
-     
- 
-    var Url = `/comment`;
-    fetch(Url, {
-      credentials: "same-origin",
-      method: "POST",
-      headers: { 'Accept': 'application/json',"Content-Type": "application/json" },
-      body: JSON.stringify(userComment)
-    })
-    
- 
-    }
-    </script>
+                    var userComment = {
+                        camment: `${commentText.value}`,
+                        game_id: `${gameId.value}`,
+                    };
+
+
+                    var Url = `/comment`;
+                    fetch(Url, {
+                        credentials: "same-origin",
+                        method: "POST",
+                        headers: {
+                            'Accept': 'application/json',
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(userComment)
+                    })
+
+
+                }
+            </script>
 </body>
